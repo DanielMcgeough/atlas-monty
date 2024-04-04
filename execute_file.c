@@ -12,7 +12,7 @@ void execute_file(FILE *file)
 	{
 		line_number++;
 		char *opcode = strtok(line, " \t\n");
-		if (opcode == NULL || opcode[0] == "#")
+		if (opcode == NULL || strcmp(opcode, "#") == 0)
 		{
 			continue;
 		}

@@ -69,3 +69,17 @@ void pall()
         current = current->prev;
     }
 }
+
+void pint()
+{
+    {
+        fprintf(stderr, "Error: Stack is empty\n");
+        exit(EXIT_FAILURE);
+    }
+    printf("%d\n", stack_top->n);
+}
+
+void nop()
+{
+    /*you got jokes*/
+}

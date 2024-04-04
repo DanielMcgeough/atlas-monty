@@ -56,7 +56,7 @@ void add()
         fprintf(stderr, "Error: not enough elements for add\n");
         exit(EXIT_FAILURE);
     }
-    stack_tip->prev->n += stack_top->n;
+    stack_top->prev->n += stack_top->n;
     pop();
 }
 
@@ -72,6 +72,7 @@ void pall()
 
 void pint()
 {
+    if (stack_top == NULL)
     {
         fprintf(stderr, "Error: Stack is empty\n");
         exit(EXIT_FAILURE);

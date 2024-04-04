@@ -1,4 +1,5 @@
 #include "monty.h"
+stack_t *stack_top = NULL;
 
 void execute_file(FILE *file)
 {
@@ -11,7 +12,7 @@ void execute_file(FILE *file)
 	{
 		line_number++;
 		char *opcode = strtok(line, " \t\n");
-		if (opcode == NULL || *opcode == "#")
+		if (opcode == NULL || opcode[0] == "#")
 		{
 			continue;
 		}

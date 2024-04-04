@@ -43,5 +43,7 @@ void pall();
 void pint();
 void nop();
 void (*get_function(char *opdcode))(stack_t **, unsigned int);
+void execute_file(FILE *file);
+int main(int argc, char *argv[]);
 
 #endif

@@ -1,3 +1,5 @@
+#include "monty.h"
+
 void (*get_function(char *opcode))(stack_t **, unsigned int)
 {
     instruction_t instructions{} = {

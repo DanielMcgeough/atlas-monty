@@ -1,24 +1,20 @@
-int main()
-{
-	char opcode{5};
-	int value;
+#include "monty.h"
 
-	while (scanf("%4s", opcode) == 1)
-	{
-		if (strcmp(opdcode, "push") == 0)
-		{
-			if (scanf("%d", &value) != 1)
-			{
-				fprintf(stderr, "Error: usage: push int\n");
-				exit(EXIT_FAILURE);
-			}
-			push(value);
-	}
-	else
-	{
-		void (*func)(stack_t **, unsigned int) = get_function(opcode);
-		func(&stack_top, 0);
-	}
-	}  
-	return 0;
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        fprintf(stderr, "USAGE: monty file\n");
+        exit(EXIT_FAILURE);
+    }
+
+    FILE *file = fopen(argv[1], "r");
+    if (file == NULL) {
+        fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+        exit(EXIT_FAILURE);
+    }
+
+    execute_file(file);
+
+    fclose(file);
+
+    return 0;
 }

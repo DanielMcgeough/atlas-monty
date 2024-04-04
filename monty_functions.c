@@ -7,7 +7,7 @@ void push(int value)
     stack_t *new_node = malloc(sizeof(stack_t));
     if (new_node == NULL)
         {
-            fprintf(stderr, "Error: Allocation failed\n:"):
+            fprintf(stderr, "Error: Allocation failed\n");
             exit(EXIT_FAILURE);
         }
         new_node->n = value;

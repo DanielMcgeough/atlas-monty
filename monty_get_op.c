@@ -2,7 +2,7 @@
 
 void (*get_function(char *opcode))(stack_t **, unsigned int)
 {
-    instruction_t instructions{} = {
+    instruction_t instructions[] = {
         {"push", push},
         {"pop", pop},
         {"swap", swap},
@@ -12,7 +12,7 @@ void (*get_function(char *opcode))(stack_t **, unsigned int)
         {"nop", nop},
         {NULL, NULL}
     };
-    for (int i = 0; instructions{i}.opcode != NULL; i++)
+    for (int i = 0; instructions[i].opcode != NULL; i++)
     {
         if (strcmp(opcode, instructions[i].opcode) == 0)
         {
